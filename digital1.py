@@ -25,5 +25,8 @@ height1 = answer1()
 height2 = x
 plt.bar(left+w/2, height1, width = w, color="#d97343")
 plt.bar(left-w/2, height2, width = w, color="#404cd9")
+#日本語使えない
+plt.xlabel("n")
+plt.ylabel("Signal level")
 
 plt.show()
