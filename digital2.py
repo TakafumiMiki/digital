@@ -1,20 +1,20 @@
 import math
 
-def reh(f_n,h_n):
+def reh():
     result = []
     for i in range(f_leng):
-        res = h_n[0]
+        res = h[0]
         for j in range(1,h_leng):
-            res += h_n[j]*math.cos(-2*math.pi*f_n[i]*j/fs)
+            res += h[j]*math.cos(-2*math.pi*f[i]*j/fs)
         result.append(res)
     return result
 
-def lmh(f_n,h_n):
+def lmh():
     result = []
     for i in range(f_leng):
         res = 0
         for j in range(1,h_leng):
-            res += h_n[j]*math.sin(-2*math.pi*f_n[i]*j/fs)
+            res += h[j]*math.sin(-2*math.pi*f[i]*j/fs)
         result.append(res)        
     return result
 
@@ -31,8 +31,8 @@ h = [1.0,1.0,-1.0,-1.0,1.0]
 h_leng = len(h)
 f = [0.0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0]
 f_leng = len(f)
-ans1 = reh(f,h)
-ans2 = lmh(f,h)
+ans1 = reh()
+ans2 = lmh()
 ans3 = absh(ans1,ans2)
 
 print("実部は" + str(list(map(round, ans1, [2]*len(ans1)))))
