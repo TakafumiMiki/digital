@@ -1,3 +1,6 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
 def answer1():
     result = []
     for i in range(x_leng):
@@ -13,3 +16,14 @@ x = [1.0,1.0,-1.0,-1.0,1.0,0.0,0.0,0.0,0.0]
 x_leng = len(x)
 
 print(str(answer1()))
+
+plt.plot([-1,9], [0,0])
+
+w = 0.4
+left = np.arange(len(x))
+height1 = answer1()
+height2 = x
+plt.bar(left+w/2, height1, width = w, color="#d97343")
+plt.bar(left-w/2, height2, width = w, color="#404cd9")
+
+plt.show()

@@ -1,4 +1,5 @@
 import math
+import matplotlib.pyplot as plt
 
 def reh():
     result = []
@@ -42,3 +43,8 @@ ans3 = absh(ans1,ans2)
 print("実部は" + str(list(map(round, ans1, [2]*len(ans1)))))
 print("虚部は" + str(list(map(round, ans2, [2]*len(ans2)))))
 print("振幅特性は" + str(ans3))
+
+left = f
+height = ans3
+plt.bar(left,height,width = 0.3,color="#1da1f2", linewidth=0)
+plt.show()
