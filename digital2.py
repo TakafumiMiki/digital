@@ -1,5 +1,6 @@
 import math
 import matplotlib.pyplot as plt
+import numpy as np
 
 def reh():
     result = []
@@ -30,11 +31,12 @@ fs = 8
 #hの値を変更すれば3,4番の問題に対応できる
 #4はdigital1の答えをコピー
 
-h = [0.3, 1.0, 0.5, 0.0,-0.3]
-# h = [1.0, 1.0, -1.0, -1.0, 1.0] <= 3 
+h = [-0.3, 0.0, 0.5, 1.0, 0.7, 0.3]
+# h = [1.0, 1.0, -1.0, -1.0, 1.0] <= 3
 # h = [0.3, 1.3, 1.2, -0.8, -1.5, 0.2, 0.8, 0.3, -0.3] <= 4
 h_leng = len(h)
-f = [0.0,0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0]
+n = 8
+f = [0.5*i for i in range(n + 1)]
 f_leng = len(f)
 ans1 = reh()
 ans2 = lmh()
@@ -44,7 +46,10 @@ print("実部は" + str(list(map(round, ans1, [2]*len(ans1)))))
 print("虚部は" + str(list(map(round, ans2, [2]*len(ans2)))))
 print("振幅特性は" + str(ans3))
 
-left = f
+
+#left = f
+left = np.arange(len(f))
+
 height = ans3
 plt.bar(left,height,width = 0.3,color="#1da1f2", linewidth=0)
 plt.xlabel("Frequency[Hz]")

@@ -6,13 +6,17 @@ def answer1():
     for i in range(x_leng):
         res = 0
         for j in range(h_leng):
-            res += h[j]*x[i-j]
-        result.append(res)
+            if i - j < 0:
+                res += h[j]*0  
+            else:
+                res += h[j]*x[i-j]
+        result.append(round(res,2))
     return result
 
-h = [0.3,1.0,0.5,0.0,-0.3]
+h = [-0.3,0.0,0.5,1.0,0.7,0.3]
 h_leng = len(h)
-x = [1.0,1.0,-1.0,-1.0,1.0,0.0,0.0,0.0,0.0] 
+
+x = [1.0,1.0,0.5,0.5,0.1,0.1,0.0,0.0,0.0]
 x_leng = len(x)
 
 print(str(answer1()))
